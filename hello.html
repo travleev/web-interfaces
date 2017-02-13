@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<! Hello world and template for htmls using brython>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script src="brython.js"></script>
+    <script src="brython_stdlib.js"></script>
+</head>
+
+<body onload="brython(1)">
+    <script type="text/python" src="hello.py"></script>
+    <h1> 1-st example with brython </h1>
+
+    <p> Put any information to the left input box and click the button </p>
+
+    <input id="i1" value="input here"> <button id="b1">-></button> <span id="r1"></span> 
+
+
+
+    <p> Click the button to get the Python version info (as from sys.version_info): </p>
+    
+    <button id="b2"> python version</button> 
+
+    <span id="r2">  </span>
+
+
+
+    <p> To check where the code is executed, call a cpu-demanding routine and check cpu loads of the
+    client machine and the server. </p>
+
+    <input id="i3" value="100"> <button id="b3">-></button> <span id="r3"></span> 
+
+
+
+</body>
+
+</html>
+
