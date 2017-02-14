@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<! Example of the form to read local files, based on https://brython.info/gallery/drop_files.html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script src="brython.js"></script>
+
+    <script type="text/javascript">
+    var reader = new FileReader();
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <p></p>
+
+    <div class="dropzone" id="dz1"> Drop file here</div>
+
+    <div id="ou1"></div>
+
+    <script type="text/python" src="files.py"></script>
+
+</body>
+
+</html>
+

@@ -3,3 +3,11 @@ h1 {
     color: blue;
 }
 
+.dropzone {
+    border: 1px dashed #bbb;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold;
+    color: #bbb;
+}
