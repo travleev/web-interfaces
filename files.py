@@ -4,7 +4,6 @@ Script to read files drag-and-dropped onto a div element.
 
 from browser import document as doc
 from browser import window
-from browser.html import SAMP
 
 # I did not find the brython implementation of FileReader. THerefore,
 # I use an object created in a javascript on the same page. See in files.html
@@ -17,8 +16,12 @@ def show_content_when_loaded(evt):
     """
     Triggered when the reader completes loading the file.
     """
-    doc <= SAMP(reader.name)
-    doc <= SAMP(evt.target.result)
+
+    # evt.target refers to the object issuing the event, i.e. reader?
+    # doc <= SAMP(repr(evt.target.file_local_name))
+    # doc <= SAMP(repr(evt.target.result))
+    doc['ou0'].text = 'Content of {}:'.format(evt.target.file_local_name)
+    doc['ou1'].text = evt.target.result
     return
 
 reader.onload = show_content_when_loaded
@@ -36,7 +39,10 @@ def handleFileSelect(evt):
     # This is already file objects!
     fl = evt.dataTransfer.files
     for fn in fl:
-        reader.name = fn.name
+        # WHen reading completes, the reader trigger the onload event.
+        # Additional data for the funcion bond to this event can be
+        # passed as attributes
+        reader.file_local_name = fn.name
         reader.readAsText(fn)
 
     return
