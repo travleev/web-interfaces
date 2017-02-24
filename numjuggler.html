@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<! numuggler web interface>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script src="brython.js"></script>
+
+    <script type="text/javascript">
+    var reader = new FileReader();
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <p></p>
+
+    <p id='ou0'>File content:</p>
+    <textarea id="ou1"></textarea>
+
+    <div class="dropzone" id="dz1"> Drop file here</div>
+
+    <p id='ou0'>File content:</p>
+    <textarea id="ou1"></textarea>
+
+    <script type="text/python" src="files.py"></script>
+
+</body>
+
+</html>
+
