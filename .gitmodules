@@ -1,0 +1,3 @@
+[submodule "numjuggler"]
+	path = numjuggler
+	url = git@github.com:inr-kit/numjuggler.git
