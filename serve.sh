@@ -1,20 +1,18 @@
 #!/bin/bash
 
+port="8010"
+
 
 # Start http server. Daemon starts only when port 8000 not busy
-busybox httpd -p 8010 -h .  >> serve.log 2>&1
+busybox httpd -p $port -h .  >> serve.log 2>&1
 
-# Get status. 0 only if daemon started. When port is busy, exit status is 1
-s=$?
+# Get PID/program of the currently running program at port 
+pp=$(netstat -tulnp 2>/dev/null | grep ":$port" | awk '{print $NF}')
 
 # Inform
-if [ "$s" == "0" ]; then
-    echo "New daemon started"
-else
-    echo "Daemon already exists"
-fi    
+echo "Port $port is served by $pp"
 
 # Start browser
 # This does not leave any traces 
-python -m webbrowser -n 'http://localhost:8010' > /dev/null 2>&1
+python -m webbrowser -n "http://localhost:$port" > /dev/null 2>&1
 
