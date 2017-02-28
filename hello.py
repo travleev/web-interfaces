@@ -12,7 +12,7 @@ def print_hallo(event):
 
 
 def print_path(event):
-    document['r2'].text = ' '.join([str(sys.version), c.p, c.m])
+    document['r2'].text = ' '.join([str(sys.path), c.p, c.m])
     return
 
 

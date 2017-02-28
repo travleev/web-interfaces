@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style1.css">
     <script src="brython.js"></script>
+    <script src="brython_stdlib.js"></script>
 
     <script type="text/javascript">
     var reader = new FileReader();
@@ -13,15 +14,15 @@
 <body onload="brython(1)">
     <p></p>
 
-    <p id='ou0'>File content:</p>
-    <textarea id="ou1"></textarea>
+    <p id='p1'>Original MCNP input:</p>
+    <textarea id="ta1">Drop MCNP file here</textarea>
 
-    <div class="dropzone" id="dz1"> Drop file here</div>
+    <button id='b1'>Process</button>
 
-    <p id='ou0'>File content:</p>
-    <textarea id="ou1"></textarea>
+    <p id='p2'>Info:</p>
+    <textarea id="ta2"></textarea>
 
-    <script type="text/python" src="files.py"></script>
+    <script type="text/python" src="numjuggler_wi.py"></script>
 
 </body>
 

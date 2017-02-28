@@ -21,7 +21,7 @@ def show_content_when_loaded(evt):
     # doc <= SAMP(repr(evt.target.file_local_name))
     # doc <= SAMP(repr(evt.target.result))
     doc['ou0'].text = 'Content of {}:'.format(evt.target.file_local_name)
-    doc['ou1'].text = evt.target.result
+    doc['ou1'].text = repr(evt.target.result)
     return
 
 reader.onload = show_content_when_loaded
