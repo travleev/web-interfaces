@@ -3,7 +3,9 @@
 from browser import document
 import sys
 import package1
+import numjuggler
 c = package1.C1()
+f = numjuggler.f
 
 
 def print_hallo(event):
@@ -12,7 +14,7 @@ def print_hallo(event):
 
 
 def print_path(event):
-    document['r2'].text = ' '.join([str(sys.path), c.p, c.m])
+    document['r2'].text = ' '.join([str(sys.path), c.p, c.m, str(f())])
     return
 
 
